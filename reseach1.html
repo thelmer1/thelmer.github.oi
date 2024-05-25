@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal A.I. Assistant for Contacting You</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #0f0;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .terminal {
+            width: 80%;
+            max-width: 800px;
+            background: #111;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+        }
+        .message-box {
+            background: #222;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .input-box {
+            display: flex;
+            flex-direction: column;
+        }
+        .input-box input, .input-box textarea, .input-box select {
+            background: #222;
+            color: #0f0;
+            border: none;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .input-box button {
+            background: #0f0;
+            color: #000;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="terminal">
+        <div class="message-box" id="ai-messages">
+            <p>Hello! I am your personal AI assistant. How can I assist you today?</p>
+            <p>Please select an option:</p>
+            <div class="input-box">
+                <button onclick="handleOption('project')">Project Inquiry</button>
+                <button onclick="handleOption('job')">Job Opportunity</button>
+                <button onclick="handleOption('schedule')">Schedule a Call</button>
+                <button onclick="handleOption('portfolio')">View Portfolio</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function handleOption(option) {
+            const aiMessages = document.getElementById('ai-messages');
+            aiMessages.innerHTML = '';  // Clear previous messages
+
+            if (option === 'project') {
+                aiMessages.innerHTML = `
+                    <p>Great! Please provide some details about your project.</p>
+                    <div class="input-box">
+                        <textarea id="project-details" placeholder="Project details..."></textarea>
+                        <input type="number" id="project-budget" placeholder="Estimated budget (USD)">
+                        <button onclick="submitProjectInquiry()">Submit</button>
+                    </div>
+                `;
+            } else if (option === 'job') {
+                aiMessages.innerHTML = `
+                    <p>Fantastic! Let's see if you're a good fit. Please answer the following:</p>
+                    <div class="input-box">
+                        <input type="text" id="job-role" placeholder="Desired role">
+                        <select id="experience-level">
+                            <option value="" disabled selected>Experience Level</option>
+                            <option value="junior">Junior</option>
+                            <option value="mid">Mid</option>
+                            <option value="senior">Senior</option>
+                        </select>
+                        <button onclick="submitJobOpportunity()">Submit</button>
+                    </div>
+                `;
+            } else if (option === 'schedule') {
+                aiMessages.innerHTML = `
+                    <p>Let's schedule a call! Please provide your email and select a date and time.</p>
+                    <div class="input-box">
+                        <input type="email" id="schedule-email" placeholder="Your email">
+                        <input type="datetime-local" id="schedule-datetime">
+                        <button onclick="submitSchedule()">Schedule</button>
+                    </div>
+                `;
+            } else if (option === 'portfolio') {
+                aiMessages.innerHTML = `
+                    <p>Here's a link to my portfolio:</p>
+                    <p><a href="https://yourportfolio.com" target="_blank" style="color: #0f0;">View Portfolio</a></p>
+                `;
+            }
+        }
+
+        function submitProjectInquiry() {
+            const details = document.getElementById('project-details').value;
+            const budget = document.getElementById('project-budget').value;
+            alert(`Project Inquiry Submitted!\nDetails: ${details}\nBudget: ${budget}`);
+        }
+
+        function submitJobOpportunity() {
+            const role = document.getElementById('job-role').value;
+            const experience = document.getElementById('experience-level').value;
+            alert(`Job Opportunity Submitted!\nRole: ${role}\nExperience Level: ${experience}`);
+        }
+
+        function submitSchedule() {
+            const email = document.getElementById('schedule-email').value;
+            const datetime = document.getElementById('schedule-datetime').value;
+            alert(`Call Scheduled!\nEmail: ${email}\nDate and Time: ${datetime}`);
+        }
+    </script>
+</body>
+</html>

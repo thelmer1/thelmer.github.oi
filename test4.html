@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills Showcase</title>
+    <style>
+        body {
+    margin: 0;
+    padding: 0;
+    font-family: "Courier New", monospace;
+    background-color: #222;
+    color: #0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 80%;
+    flex-wrap: wrap;
+}
+
+.skills {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 400px;
+    flex: 1;
+}
+
+.skill {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+    color: #fff;
+}
+
+.progress-bar {
+    height: 20px;
+    background-color: #333;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-bar::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 0;
+    background-color: rgba(0, 255, 0, 0.5);
+    border-radius: 10px;
+    animation: load 10s forwards;
+}
+
+#html-bar::before {
+    animation-duration: 8s;
+    background-color: #ff4c4c;
+}
+
+#css-bar::before {
+    animation-duration: 10s;
+    background-color: #ffd700;
+}
+
+#js-bar::before {
+    animation-duration: 9s;
+    background-color: #00bfff;
+}
+
+#php-bar::before {
+    animation-duration: 11s;
+    background-color: #d15fee;
+}
+
+.code-box {
+    flex: 2;
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+    height: 500px; /* Adjust the height to fit your design */
+}
+
+#code-container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+pre {
+    font-size: 1.2em;
+    margin: 0;
+    white-space: pre-wrap;
+}
+
+.var-highlight {
+    color: #C0AD60;
+}
+
+.string-highlight {
+    color: rgba(253, 149, 90, 0.8);
+}
+
+#typewriter {
+    font-size: 1.5em;
+    font-family: "Courier New";
+    padding-bottom: 50px; /* Extra padding to ensure visibility during scroll */
+}
+
+#typewriter::after {
+    content: "|";
+    animation: blink 500ms linear infinite alternate;
+}
+
+@keyframes blink {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes load {
+    0% { width: 0; }
+    100% { width: 100%; }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .skills {
+        flex-direction: column;
+        justify-content: center;
+        height: auto;
+        width: 100%;
+    }
+    
+    .skill {
+        width: 100%;
+    }
+    
+    .code-box {
+        margin-top: 20px;
+        padding: 50% 8%;
+        width: 100%;
+    }
+    .code-container{
+        margin-right: 5rem;
+    }
+}
+header{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+header a{
+    color:#0f0;
+    transition: 0.3s ease;
+}
+a:hover{
+    color: rgba(0, 255, 0, 0.5);
+}
+
+    </style>
+</head>
+<body>
+    <header><a href="index.html"> Go back</a></header>
+    <div class="container">
+        <div class="skills">
+            <div class="skill">
+                <span>HTML</span>
+                <div class="progress-bar" id="html-bar"></div>
+            </div>
+            <div class="skill">
+                <span>CSS</span>
+                <div class="progress-bar" id="css-bar"></div>
+            </div>
+            <div class="skill">
+                <span>JavaScript</span>
+                <div class="progress-bar" id="js-bar"></div>
+            </div>
+            <div class="skill">
+                <span>PHP</span>
+                <div class="progress-bar" id="php-bar"></div>
+            </div>
+        </div>
+        <div class="code-box">
+            <div id="code-container">
+                <pre id="typewriter"></pre>
+            </div>
+        </div>
+    </div>
+    <script>
+        function setupTypewriter(t, code) {
+    t.innerHTML = "";
+
+    var cursorPosition = 0,
+        typeSpeed = 10,
+        tempTypeSpeed = 0;
+
+    var type = function() {
+        if (cursorPosition < code.length) {
+            if (code[cursorPosition] === " ") {
+                tempTypeSpeed = 0;
+            } else {
+                tempTypeSpeed = (Math.random() * typeSpeed) + 50;
+            }
+
+            t.innerHTML += code[cursorPosition];
+            cursorPosition += 1;
+
+            setTimeout(type, tempTypeSpeed);
+        } else {
+            cursorPosition = 0;
+            t.innerHTML += "\n\n";
+            type();
+        }
+
+        var codeContainer = document.getElementById('code-container');
+        codeContainer.scrollTop = codeContainer.scrollHeight;
+    };
+
+    return {
+        type: type
+    };
+}
+
+var code = `#include <iostream>
+#include <vector>
+#include <string>
+#include <algorithm>
+#include <map>
+#include <set>
+#include <functional>
+#include <thread>
+#include <chrono>
+
+// Function prototypes
+void demonstrateProgrammingSkills();
+void showProjectManagementSkills();
+void displayProblemSolvingAbilities();
+void highlightCollaborationSkills();
+void showcaseMachineLearningCapabilities();
+
+int main() {
+    std::cout << "Thelmer is an exceptional software developer with a wide range of skills and expertise.\n\n";
+
+    demonstrateProgrammingSkills();
+    showProjectManagementSkills();
+    displayProblemSolvingAbilities();
+    highlightCollaborationSkills();
+    showcaseMachineLearningCapabilities();
+
+    return 0;
+}
+
+void demonstrateProgrammingSkills() {
+    std::cout << "1. Programming Skills\n";
+    std::cout << "Thelmer is proficient in multiple programming languages including C++, Python, and JavaScript.\n";
+    
+    // Example: C++ STL usage
+    std::vector<int> numbers = {1, 2, 3, 4, 5};
+    std::cout << "Example of using C++ Standard Template Library (STL):\n";
+    std::cout << "Original vector: ";
+    for (int num : numbers) std::cout << num << " ";
+    std::cout << "\n";
+
+    std::reverse(numbers.begin(), numbers.end());
+    std::cout << "Reversed vector: ";
+    for (int num : numbers) std::cout << num << " ";
+    std::cout << "\n\n";
+}
+
+void showProjectManagementSkills() {
+    std::cout << "2. Project Management Skills\n";
+    std::cout << "Thelmer excels in managing complex software projects using Agile methodologies.\n";
+
+    // Example: Managing tasks with a map
+    std::map<std::string, std::string> projectTasks = {
+        {"Design", "Completed"},
+        {"Development", "In Progress"},
+        {"Testing", "Pending"}
+    };
+
+    std::cout << "Project tasks status:\n";
+    for (const auto &task : projectTasks) {
+        std::cout << task.first << ": " << task.second << "\n";
+    }
+    std::cout << "\n";
+}
+
+void displayProblemSolvingAbilities() {
+    std::cout << "3. Problem Solving Abilities\n";
+    std::cout << "Thelmer has a keen eye for detail and can solve complex problems efficiently.\n";
+
+    // Example: Solving a problem using a set
+    std::set<int> uniqueNumbers = {1, 2, 2, 3, 4, 4, 5};
+    std::cout << "Using a set to store unique numbers:\n";
+    std::cout << "Unique numbers: ";
+    for (int num : uniqueNumbers) std::cout << num << " ";
+    std::cout << "\n\n";
+}
+
+void highlightCollaborationSkills() {
+    std::cout << "4. Collaboration Skills\n";
+    std::cout << "Thelmer works effectively in team environments, contributing to open-source projects and mentoring junior developers.\n";
+
+    // Example: Multithreading for collaborative tasks
+    auto task = [](const std::string &taskName) {
+        std::cout << "Starting " << taskName << "...\n";
+        std::this_thread::sleep_for(std::chrono::seconds(1));
+        std::cout << taskName << " completed.\n";
+    };
+
+    std::cout << "Demonstrating multithreading to handle multiple tasks simultaneously:\n";
+    std::thread thread1(task, "Task 1");
+    std::thread thread2(task, "Task 2");
+
+    thread1.join();
+    thread2.join();
+    std::cout << "\n";
+}
+
+void showcaseMachineLearningCapabilities() {
+    std::cout << "5. Machine Learning Capabilities\n";
+    std::cout << "Thelmer is proficient in machine learning, applying algorithms to solve data-driven problems.\n";
+
+    // Example: Simple linear regression in C++
+    std::vector<double> x = {1, 2, 3, 4, 5};
+    std::vector<double> y = {1.2, 2.3, 2.8, 4.5, 5.1};
+
+    double meanX = std::accumulate(x.begin(), x.end(), 0.0) / x.size();
+    double meanY = std::accumulate(y.begin(), y.end(), 0.0) / y.size();
+
+    double num = 0.0, den = 0.0;
+    for (size_t i = 0; i < x.size(); ++i) {
+        num += (x[i] - meanX) * (y[i] - meanY);
+        den += (x[i] - meanX) * (x[i] - meanX);
+    }
+
+    double slope = num / den;
+    double intercept = meanY - slope * meanX;
+
+    std::cout << "Simple linear regression to predict y from x:\n";
+    std::cout << "Slope: " << slope << ", Intercept: " << intercept << "\n";
+    std::cout << "Predicted value of y for x = 6: " << (slope * 6 + intercept) << "\n\n";
+}
+
+`;
+
+var typewriter = document.getElementById('typewriter');
+typewriter = setupTypewriter(typewriter, code);
+typewriter.type();
+
+    </script>
+</body>
+</html>

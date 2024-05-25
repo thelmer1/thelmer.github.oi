@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Website</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Poetsen+One&display=swap"
+      rel="stylesheet" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet" />
+       <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+      <link rel="stylesheet" href="header.css">
+      <link rel="stylesheet" href="footer.css">
+   
+    <style>
+    /* Import the fonts */
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Poetsen+One&display=swap');
+
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: "Libre Baskerville", serif;
+    background: #0d0d24;
+    color: #fff;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+.anim-typewriter {
+    animation: typewriter 3s steps(44) 1s 1 normal both,
+        blinkTextCursor 1.1s steps(44) infinite normal;
+}
+
+@keyframes typewriter {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 6em;
+    }
+
+    /* Adjust width to fit the length of the text */
+}
+
+@keyframes blinkTextCursor {
+    from {
+        border-right-color: rgba(255, 255, 255, .75);
+    }
+
+    to {
+        border-right-color: transparent;
+    }
+}
+
+
+/*  a:hover{
+    color: #cc297a;
+}
+ */
+
+.hero {
+    position: relative;
+    text-align: center;
+    padding: 100px 0;
+    /* display: grid;
+    justify-content: center; */
+    isolation: isolate;
+    mix-blend-mode: lighten;
+    
+}
+.hero::before{
+    content: '';
+    position: absolute;
+    background: linear-gradient(25deg,#ff3399,#0d0d24);
+    inset: 0;
+    z-index: -1;
+    
+
+    
+}
+
+
+.hero h2 {
+   justify-self: center;
+   position: relative;
+   left: 30rem;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    overflow: hidden;
+    border-right: 2px solid rgba(255, 255, 255, .75);
+}
+@media (max-width: 1024px) {
+    .hero h2 {
+        left: 18rem;
+        /* Adjust as needed */
+    }
+}
+
+/* Small screens */
+@media (max-width: 768px) {
+    .hero h2 {
+        left: 12rem;
+        /* Adjust as needed */
+    }
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+}
+/* Extra small screens */
+@media (max-width: 480px) {
+    .hero h2 {
+        left: 5rem;
+        /* Adjust as needed */
+    }
+}
+
+/* Very small screens */
+@media (max-width: 320px) {
+    .hero h2 {
+        left: 2rem;
+        /* Adjust as needed */
+        font-size: 2em;
+        /* Optional: adjust font size for very small screens */
+    }
+}
+
+.get-started {
+    background: #ff3399;
+    border: none;
+    padding: 15px 30px;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: 0.3s ease;
+}
+.get-started:hover{
+    background: #cc297a;
+}
+
+.how-it-works {
+    display: block;
+    margin-top: 20px;
+    color: #ff3399;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+.features {
+    padding: 50px 0;
+    background: #1a1a3d;
+}
+
+.features .feature {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.features .feature h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.features .feature p {
+    font-size: 1em;
+}
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+
+    .hero {
+        padding: 50px 0;
+    }
+
+    .features .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+       
+}
+
+    </style>
+  </head>
+  <body>
+<!---------------------    new header------------------ -->
+     <header>
+      <div class="header">
+        <h1 class="logo">@Thelmer</h1>
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="work.html">How I Work</a>
+          <a href="contact.html">Let's Talk</a>
+          <a href="test4.html">My Skills</a>
+        </nav>
+        <div class="menu-icons">
+          <i class="bx bx-menu-alt-right menu-icon"></i>
+          <i class="bx bx-x close-icon"></i>
+        </div>
+      </div>
+    </header>
+    <div class="sidebar left-sidebar">
+      <a href="index.html">Home</a>
+      <a href="work.html">How I Work</a>
+    </div>
+    <div class="sidebar right-sidebar">
+      <a href="contact.html">Let's Talk</a>
+      <a href="test4.html">My Skills</a>
+    </div>
+<!---------------------  end of new header------------------ -->
+
+    <main style=" padding-top: 4rem;">
+      <section class="hero">
+        <div class="container">
+          <h2 class="libre-baskerville-regular anim-typewriter">THELMER</h2>
+          <p class="libre-baskerville-regular">
+            A passionate and results-oriented professional with 5 years of
+            experience in Web development.
+          </p>
+          <button class="get-started">Hire Me</button>
+          <a href="work.html" class="how-it-works">How i work</a>
+        </div>
+      </section>
+      <section class="features">
+        <div class="container">
+          <div class="feature">
+            <h3 class="libre-baskerville-bold">About Me</h3>
+            <p class="libre-baskerville-regular">
+              I believe anything is possible in the digital real.
+            </p>
+          </div>
+          <div class="feature">
+            <h3 class="libre-baskerville-bold">My moto</h3>
+            <p class="libre-baskerville-regular">
+              To live is to code and to code is to live.
+            </p>
+          </div>
+          <div class="feature">
+            <h3 class="libre-baskerville-bold">Why Me</h3>
+            <p class="libre-baskerville-regular">
+              I design for competition, and i develope systems that exceeds the
+              client's expectations.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!---------------- footer content : ------------------------>
+    
+    <footer>
+      <div class="footer-container">
+        <div class="footer-logo">
+          <p>thelmer</p>
+        </div>
+        <div class="footer-contact">
+          <p class="location">Malawi, Mzuzu</p>
+          <p class="phone">265 990342842</p>
+          <p class="email">
+            <a href="mailto:thelmer777@gmail.com">thelmer777@gmail.com</a>
+          </p>
+        </div>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/profile.php?id=100088886132209&mibextid=LQQJ4d" class="social-icon facebook"
+            ><i class="bx bxl-facebook"></i
+          ></a>
+          <a href="https://www.instagram.com/invites/contact/?i=18rlddufqjwzs&utm_content=tdgri9b" class="social-icon twitter"
+            ><i class='bx bxl-instagram-alt'></i></a>
+          <a href="#" class="social-icon github"
+            ><i class="bx bxl-github"></i
+          ></a>
+          <a href="#" class="social-icon telegram"
+            ><i class="bx bxl-telegram"></i
+          ></a>
+        </div>
+        <div class="footer-services">
+          <p>Web Dev</p>
+          <p>Mobile Dev</p>
+          <p>Graphic Design</p>
+          <p>Programming Courses</p>
+          <p>Desktop App Dev</p>
+        </div>
+        <div class="footer-affiliation">
+          <p>Professional Affiliations:</p>
+          <p>Digital Lake Malawi</p>
+        </div>
+        <div class="footer-subscription">
+          <form action="thelmer777@gmail.com" method="post">
+            <input type="email" placeholder="Enter your email here" />
+            <button type="submit">Join</button>
+          </form>
+          <a href="#" class="back-to-top">Back to Top</a>
+        </div>
+      </div>
+      <p>© 2024 by Thelmer. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

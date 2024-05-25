@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="header.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet" />
+      <link rel="stylesheet" href="footer.css">
+    <title>Let's Talk</title>
+    <style>
+      body {
+        font-family: "Times New Roman", serif;
+        margin: 0;
+        padding: 0;
+        /* background-color: #fdf1e4; */
+        background: linear-gradient(25deg, #ff3399, #0d0d24);
+        color: #0d0d24;
+      }
+
+      main {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      #contact-section,
+      #newsletter-section {
+        background-color: rgb(0, 0, 0, 0.2);
+        backdrop-filter: blur(6rem);
+        padding: 20px;
+        width: 45%;
+        margin: 10px;
+        box-sizing: border-box;
+        border-radius: 1rem;
+        transition: 0.3s ease;
+      }
+      #contact-section:hover,
+      #newsletter-section:hover {
+        transform: scale(1, 1);
+      }
+      #contact-section:hover h2 {
+        color: #ffffff;
+      }
+      #contact-section:hover form label {
+        color: #ffffff;
+      }
+      #newsletter-section:hover {
+        color: #ffffff;
+      }
+
+      h2 {
+        font-family: "Georgia", serif;
+        font-size: 24px;
+        transition: 0.3s ease;
+      }
+
+      label {
+        display: block;
+        margin: 15px 0 5px;
+        transition: 0.3s ease;
+      }
+
+      input,
+      textarea {
+        width: calc(100% - 20px);
+        padding: 10px;
+        margin-top: 5px;
+        border-radius: 0.4rem;
+        font-family: inherit;
+        background-color: #ccc;
+        font-size: 16px;
+        border-style: none;
+        transition: 0.2s ease;
+      }
+      input:focus,
+      textarea:focus {
+        outline: none;
+        caret-color: #ff3399;
+      }
+
+      textarea {
+        height: 100px;
+      }
+
+      button {
+        background: #ff3399;
+        border: none;
+        padding: 10px 20px;
+        margin-top: 5px;
+        font-size: 16px;
+        color: #fff;
+        cursor: pointer;
+        border-radius: 5px;
+        align-self: flex-start;
+        transition: 0.3s ease;
+      }
+      button:hover {
+        background: #cc297a;
+      }
+
+      a {
+        color: #ff3399;
+        text-decoration: none;
+      }
+
+      .form-container {
+        display: flex;
+        flex-direction: column;
+      }
+
+      @media (max-width: 768px) {
+        #contact-section,
+        #newsletter-section {
+          width: 90%;
+        }
+
+        h2 {
+          font-size: 20px;
+        }
+
+        label,
+        input,
+        textarea,
+        button {
+          font-size: 14px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        header {
+          padding: 15px;
+        }
+
+        main {
+          padding: 10px;
+        }
+
+        #contact-section,
+        #newsletter-section {
+          padding: 15px;
+          margin: 5px;
+        }
+
+        h2 {
+          font-size: 18px;
+        }
+
+        label,
+        input,
+        textarea,
+        button {
+          font-size: 12px;
+        }
+      }
+      main{
+        padding-top: 8rem;
+      }
+      footer{
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <h1 class="logo">@Thelmer</h1>
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="work.html">How I Work</a>
+          <a href="contact.html">Let's Talk</a>
+          <a href="test4.html">My skills</a>
+        </nav>
+        <div class="menu-icons">
+          <i class="bx bx-menu-alt-right menu-icon"></i>
+          <i class="bx bx-x close-icon"></i>
+        </div>
+      </div>
+    </header>
+    <div class="sidebar left-sidebar">
+      <a href="index.html">Home</a>
+      <a href="work.html">How I Work</a>
+    </div>
+    <div class="sidebar right-sidebar">
+      <a href="contact.html">Let's Talk</a>
+      <a href="test4.html">My skills</a>
+    </div>
+    <main>
+      <section id="contact-section">
+        <h2>Lets Talk</h2>
+        <form class="form-container">
+          <label for="full-name">Full name</label>
+          <input type="text" id="full-name" name="full-name" required />
+
+          <label for="email-address">Email address</label>
+          <input
+            type="email"
+            id="email-address"
+            name="email-address"
+            required />
+
+          <label for="contact-number">Contact number</label>
+          <input type="text" id="contact-number" name="contact-number" />
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required></textarea>
+
+          <button type="submit">Send message →</button>
+        </form>
+      </section>
+      <section id="newsletter-section">
+        <h2>Join My newsletter</h2>
+        <p>
+          Stay in the loop! Sign up with your email address to receive our
+          regular software engineering updates. These updates will keep you
+          informed about exciting new developments in my codebase, upcoming
+          features i'm working on.
+        </p>
+        <form class="form-container">
+          <label for="newsletter-email">Email Address</label>
+          <input
+            type="email"
+            id="newsletter-email"
+            name="newsletter-email"
+            required />
+          <button type="submit">Sign up →</button>
+        </form>
+        <h3>Legal</h3>
+        <p>
+          <a href="#">Terms & Conditions</a> | <a href="#">Privacy Policy</a> |
+          <a href="#">Cookie Policy</a>
+        </p>
+
+        <h3>Alternatively contact me at:</h3>
+        <p>
+          Email: <a href="mailto:thelmer777@gmail.com">thelmer777@gmail.com</a
+          ><br />
+          Phone: +265 990 342 842<br />
+          Mzuzu malawi.<br />
+        </p>
+      </section>
+    </main>
+    <footer>
+      <div class="footer-container">
+        <div class="footer-logo">
+          <p>thelmer</p>
+        </div>
+        <div class="footer-contact">
+          <p class="location">Malawi, Mzuzu</p>
+          <p class="phone">265 990342842</p>
+          <p class="email">
+            <a href="mailto:thelmer777@gmail.com">thelmer777@gmail.com</a>
+          </p>
+        </div>
+        <div class="footer-social">
+          <a href="#" class="social-icon facebook"
+            ><i class="bx bxl-facebook"></i
+          ></a>
+          <a href="#" class="social-icon twitter"
+            ><i class="bx bxl-twitter"></i
+          ></a>
+          <a href="#" class="social-icon github"
+            ><i class="bx bxl-github"></i
+          ></a>
+          <a href="#" class="social-icon telegram"
+            ><i class="bx bxl-telegram"></i
+          ></a>
+        </div>
+        <div class="footer-services">
+          <p>Web Dev</p>
+          <p>Mobile Dev</p>
+          <p>Graphic Design</p>
+          <p>Programming Courses</p>
+          <p>Desktop App Dev</p>
+        </div>
+        <div class="footer-affiliation">
+          <p>Professional Affiliations:</p>
+          <p>Digital Lake Malawi</p>
+        </div>
+        <div class="footer-subscription">
+          <form action="thelmer777@gmail.com" method="post">
+            <input type="email" placeholder="Enter your email here" />
+            <button type="submit">Join</button>
+          </form>
+          <a href="#" class="back-to-top">Back to Top</a>
+        </div>
+      </div>
+      <p>© 2024 by Thelmer. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+      document
+        .querySelector("#contact-section form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          alert("Message sent!");
+        });
+
+      document
+        .querySelector("#newsletter-section form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          alert("Signed up for newsletter!");
+        });
+    </script>
+  </body>
+</html>
